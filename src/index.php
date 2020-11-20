@@ -17,7 +17,6 @@
         <!-- Google Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
     </head>
-
     <body class="container col-12 m-0 p-0">
         
         <!-- Header -->
@@ -26,7 +25,7 @@
            
            <!-- Navbar -->
 
-            <nav class="navbar navbar-expand-sm sticky-top navbar-expand-lg navbar-dark py-4">
+            <nav class="navbar col-12 navbar-expand-sm sticky-top navbar-expand-lg navbar-dark py-4">
                 <a class="navbar-brand" href="#">TipCash</a>
                 <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -38,10 +37,29 @@
                             <a class="nav-link" href="#duvida">Duvidas Frequentes</a>
                         </li>
                         <li class="nav-item">
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" id="cadastroLink" href="empresas.php">Cadastro</a>
                         </li>
                         <a class="btn btn-primary nav-item nav-button" style="width: 150px;" href="download.php" role="button">Baixe o app</a>
+                        
+                        
                     </ul>
+
+                    <div class="dropdown" style="margin-right: 5rem;">
+                        <button class="btn btn-secondary dropdown-toggle logout" type="button" id="logout-coiso" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style=" background-color: rgb(45,74,142);">
+                            Sessão
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="" data-toggle="modal" data-target="#change-email">
+                                Alterar senha
+                            </a>
+                            <a class="dropdown-item" href="" data-toggle="modal" data-target="#change-senha">
+                                Alterar Email
+                            </a>
+                            <a class="dropdown-item"><input type="submit" class="btn btn-primary" value="Deslogar" action="Logout.php"></a>
+                        </div>
+                    </div>
                 </div>
             </nav>
 
@@ -50,7 +68,7 @@
             <img class="header-logo" alt="" src="img/header-logo-white(ruim).png">
             <div class="header-logo-title"> TipCash </div>
             <div class="text-header">Conecte-se a qualquer hora, <br> Pague, em qualquer lugar</div>
-            <a class="header-button btn btn-primary" href="baixe.php">Baixe o APP</a>
+            <a class="header-button btn btn-primary" href="download.php">Baixe o APP</a>
         </section>
 
         <!-- Introduction -->
@@ -272,6 +290,109 @@
             </div>
         </section>
         
+        <!-- Modal 1 -->
+
+                <div class="modal fade" id="change-email" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Mudar Senha</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                        <section class="siteSection form-imp">
+                            <form id="cadastro" method="post" action="mSenha.php"> 
+                
+                            <label>Nome Completo</label>
+                            <br>
+                            <div class="input-group flex-nowrap">
+                                <input type="text" class="form-control" aria-describedby="addon-wrapping" placeholder="" required name="nomeC">
+                            </div>
+                
+                            <br>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email de contato</label>
+                            <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="addon-wrapping">@</span>
+                            </div>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="emailC" placeholder="email@exemplo.com" required>
+                            </div>
+                            <br>
+                                <label for="exampleInputPassword1">Senha</label>
+                                <input type="password" class="form-control" name="sD" id="SenhaA">
+                                <label class="errorMessage" style="display: none;" id="errorMessage-password">Preencha os campos com senhas iguais.</label>
+                            <br>
+                                <label for="exampleInputPassword1">Confirmar Senha</label>
+                                <input type="password" class="form-control" name="sD" id="SenhaA">
+                            <br>
+                            <input type="submit" value="Alterar" class="btn btn-primary">
+                            </form>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+            <!-- Modal 2 -->
+            
+            <div class="modal fade" id="change-senha" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Mudar Email</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                        <section class="siteSection form-imp">
+                            <form id="cadastro" method="post" action="mEmail.php"> 
+                
+                            <label>Nome Completo</label>
+                            <br>
+                            <div class="input-group flex-nowrap">
+                                <input type="text" class="form-control" aria-describedby="addon-wrapping" placeholder="" required name="nomeC">
+                            </div>
+                
+                            <br>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email</label>
+                            <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="addon-wrapping">@</span>
+                            </div>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="emailC" placeholder="email@exemplo.com" required>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Confirmar Email</label>
+                            <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="addon-wrapping">@</span>
+                            </div>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="emailD" placeholder="email@exemplo.com" required>
+                            </div>
+                            <br>
+                                <label for="exampleInputPassword1">Senha</label>
+                                <input type="password" class="form-control" name="sC" id="SenhaA">
+                            <br>    
+                            <input type="submit" value="Alterar" class="btn btn-primary">
+                            </form>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <!-- Popper.js -->
@@ -290,7 +411,9 @@
             }
 
             $(document).ready( ( ) => {
-                if ( getCook( 'email' ) != undefined ) document.getElementById( 'cadastroLink' ).style.display = 'none';
+                const confCookie = getCook( 'email' );
+                if ( confCookie != "" && confCookie != 'NULL' ) document.getElementById( 'cadastroLink' ).style.display = 'none';
+                //else document.getElementById( 'logout-coiso' ).style.display = 'none';
             } )
         </script>
     </body>
